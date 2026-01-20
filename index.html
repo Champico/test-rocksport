@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Rockport - UV</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-text">
+        <h1>Acondicionamiento físico y salud</h1>
+        <p>Intersemestral ENERO - FEBRERO 2026</p>
+    </div>
+    <div class="header-logo">
+        <img src="src/uv.svg" alt="Universidad Veracruzana">
+    </div>
+</header>
+
+<main class="container">
+    <span class="team">Equipo 6</span>
+    <h2 class="title">Test de Rockport</h2>
+
+    <form class="form">
+        <label>Tiempo</label>
+
+        <div class="tiempo">
+            <input type="text" inputmode="numeric" id="tiempo-minutos" placeholder="Minutos">
+            <input type="text" inputmode="numeric" id="tiempo-segundos" placeholder="Segundos">
+        </div>
+
+
+        <label>Frecuencia cardiaca (ppm)</label>
+        <input type="text" inputmode="numeric" placeholder="Ej. 120" id="fc">
+
+        <label>Peso (kg)</label>
+        <input type="text" inputmode="numeric" placeholder="Ej. 60" id="peso">
+
+        <label>Sexo</label>
+        <div class="sex-toggle">
+            <button type="button" class="sex-btn" data-sex="male">
+                <img src="src/male.png" alt="Hombre">
+            </button>
+            <button type="button" class="sex-btn" data-sex="female">
+                <img src="src/female.png" alt="Mujer">
+            </button>
+        </div>
+
+        <label>Edad</label>
+        <input type="text" inputmode="numeric" id="edad" placeholder="Ej. 20">
+
+        <button type="button" class="calculate-btn">
+            Calcular VO₂ MAX
+        </button>
+    </form>
+</main>
+
+<script src="src/script.js"></script>
+</body>
+</html>
