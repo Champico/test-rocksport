@@ -17,13 +17,13 @@ sexButtons.forEach(btn => {
     });
 });
 
-// Botón calcular (placeholder)
+//Boton para calcular el vomax
 document.querySelector(".calculate-btn").addEventListener("click", () => {
-    if (!selectedSex) {
-        alert("Selecciona el sexo");
-        return;
-    }
-    alert("Cálculo pendiente de implementar");
+    const datos = obtenerYValidarDatos();
+    if (!datos) return;
+
+    const vo2 = calcularVoMax(datos);
+    mostrarResultado(vo2);
 });
 
 
@@ -88,14 +88,6 @@ function obtenerYValidarDatos() {
         sexo: sexo // "male" o "female"
     };
 }
-
-document.querySelector(".calculate-btn").addEventListener("click", () => {
-    const datos = obtenerYValidarDatos();
-    if (!datos) return;
-
-    const vo2 = calcularVoMax(datos);
-    mostrarResultado(vo2);
-});
 
 
 function calcularVoMax(datos) {
