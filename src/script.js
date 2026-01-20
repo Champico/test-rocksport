@@ -89,13 +89,55 @@ function obtenerYValidarDatos() {
     };
 }
 
-
-
 document.querySelector(".calculate-btn").addEventListener("click", () => {
     const datos = obtenerYValidarDatos();
-
     if (!datos) return;
 
-    console.log("Datos válidos:", datos);
-    // Aquí ya puedes calcular el VO2 Max
+    const vo2 = calcularVoMax(datos);
+    mostrarResultado(vo2);
 });
+
+
+function calcularVoMax(datos) {
+    // Conversión de tiempo a minutos decimales
+    const tiempoMinutos =
+        datos.tiempo.minutos + (datos.tiempo.segundos / 60);
+
+    // Conversión de sexo a valor numérico
+    // Hombre = 1 | Mujer = 0
+    const sexoValor = datos.sexo === "male" ? 1 : 0;
+
+    // Fórmula del Test de Rockport
+    const vo2max =
+        132.853
+        - (0.1694 * datos.peso)
+        - (0.3877 * datos.edad)
+        + (6.315 * sexoValor)
+        - (3.2649 * tiempoMinutos)
+        - (0.1565 * datos.frecuenciaCardiaca);
+
+    // Redondear a 2 decimales (opcional pero recomendado)
+    return Number(vo2max.toFixed(2));
+}
+
+function mostrarResultado(vo2max) {
+    const contenedor = document.getElementById("resultado");
+
+    contenedor.innerHTML = `
+        <div class="result-card">
+            <h3>Resultado</h3>
+
+            <div class="result-value">
+                ${vo2max}
+            </div>
+
+            <div class="result-unit">
+                ml/kg/min
+            </div>
+
+            <div class="result-image-container">
+                <img src="src/resultado.png" alt="Tabla de resultados">
+            </div>
+        </div>
+    `;
+}
