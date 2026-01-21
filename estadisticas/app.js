@@ -1,8 +1,13 @@
 
 function promedio(lista, campo) {
-    if (lista.length === 0) return 0;
-    const suma = lista.reduce((acc, item) => acc + (item[campo] || 0), 0);
-    return (suma / lista.length).toFixed(2);
+    const valoresValidos = lista
+        .map(item => Number(item[campo]))
+        .filter(v => !isNaN(v));
+
+    if (valoresValidos.length === 0) return '0.00';
+
+    const suma = valoresValidos.reduce((acc, v) => acc + v, 0);
+    return (suma / valoresValidos.length).toFixed(2);
 }
 
 function filtrarPorSexo(alumnos, sexo) {
