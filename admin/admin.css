@@ -104,6 +104,11 @@ input::placeholder {
     font-family: "OpenSans", sans-serif;
 }
 
-.row-alumno{
+.row-alumno {
     width: 80%;
+}
+
+
+result-card {
+    font-family: "OpenSans", sans-serif;
 }
