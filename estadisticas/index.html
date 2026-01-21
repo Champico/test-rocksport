@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados Test Rockport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Resultados Test Rockport</h1>
+        <p>Resumen general de alumnos</p>
+    </header>
+
+    <main>
+        <!-- Resúmenes -->
+        <section class="resumen">
+            <div class="card">
+                <h3>Rockport Promedio (Total)</h3>
+                <span id="rockportTotal">--</span>
+            </div>
+
+            <div class="card">
+                <h3>Rockport Promedio (Hombres)</h3>
+                <span id="rockportHombres">--</span>
+            </div>
+
+            <div class="card">
+                <h3>Rockport Promedio (Mujeres)</h3>
+                <span id="rockportMujeres">--</span>
+            </div>
+
+            <div class="card">
+                <h3>Tiempo Promedio (Total)</h3>
+                <span id="tiempoTotal">--</span>
+            </div>
+
+            <div class="card">
+                <h3>Tiempo Promedio (Hombres)</h3>
+                <span id="tiempoHombres">--</span>
+            </div>
+
+            <div class="card">
+                <h3>Tiempo Promedio (Mujeres)</h3>
+                <span id="tiempoMujeres">--</span>
+            </div>
+        </section>
+
+        <!-- Gráficas -->
+        <section class="graficas">
+            <div class="grafica">
+                <h3>Distribución por sexo</h3>
+                <canvas id="graficaSexo"></canvas>
+            </div>
+
+            <div class="grafica">
+                <h3>Distribución de edades</h3>
+                <canvas id="graficaEdad"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
