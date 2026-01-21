@@ -69,19 +69,6 @@ function agregarCard() {
 }
 
 
-/* Evento del boton calcular */
-document.querySelector(".calc-btn").addEventListener("click", () => {
-    const datos = obtenerYValidarDatosDeCards();
-    if (!datos) return;
-
-    datos.forEach(registro => {
-        const vo2 = calcularVoMax(registro);
-        registro.rockport = vo2;
-    });
-
-    console.log("Resultados finales:", datos);
-    alert("Cálculo completado (ver consola)");
-});
 
 document.querySelector(".calculate-btn").addEventListener("click", async () => {
     const datos = obtenerYValidarDatosDeCards();
