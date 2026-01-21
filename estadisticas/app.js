@@ -52,6 +52,31 @@ async function init() {
     document.getElementById('tiempoMujeres').textContent =
         promedio(mujeres, 'tiempo');
 
+
+
+
+
+    const tbody = document.getElementById('tablaAlumnos');
+    tbody.innerHTML = '';
+
+    alumnos.forEach(a => {
+        if (a.rockport == null) return;
+
+        const nivel = clasificarRockport(a.rockport, a.sexo);
+        if (!nivel) return;
+
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+        <td>${a.nombre} ${a.apellido_paterno}</td>
+        <td class="${nivel}">${Number(a.rockport).toFixed(2)}</td>
+    `;
+
+        tbody.appendChild(tr);
+    });
+
+
+
     // Gráfica pastel sexo
     new Chart(document.getElementById('graficaSexo'), {
         type: 'pie',
@@ -86,3 +111,32 @@ async function init() {
 }
 
 init();
+
+
+
+
+function clasificarRockport(valor, sexo) {
+    if (valor == null) return null;
+
+    const v = Number(valor);
+    const s = sexo.toLowerCase();
+
+    if (s === 'h' || s === 'hombre' || s === 'masculino') {
+        if (v < 41) return 'bajo';
+        if (v <= 45) return 'regular';
+        if (v <= 50) return 'bueno';
+        if (v <= 55) return 'excelente';
+        return 'superior';
+    }
+
+    if (s === 'm' || s === 'mujer' || s === 'femenino') {
+        if (v < 35) return 'bajo';
+        if (v <= 39) return 'regular';
+        if (v <= 43) return 'bueno';
+        if (v <= 49) return 'excelente';
+        return 'superior';
+    }
+
+    return null;
+}
+

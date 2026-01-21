@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Resultados Test Rockport</title>
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="/consumeApi/consumo.js"></script>
 </head>
+
 <body>
 
     <header>
@@ -52,6 +54,58 @@
             </div>
         </section>
 
+
+
+        <!-- Clasificación   -->
+        <section class="card tabla-rockport">
+            <h3>Clasificación Test Rockport (20–29 años)</h3>
+
+            <div class="tabla-grid">
+                <div class="head"></div>
+                <div class="head">Hombres</div>
+                <div class="head">Mujeres</div>
+
+                <div class="nivel bajo">Nivel Bajo</div>
+                <div>&lt; 41</div>
+                <div>&lt; 35</div>
+
+                <div class="nivel regular">Nivel Regular</div>
+                <div>42 – 45</div>
+                <div>36 – 39</div>
+
+                <div class="nivel bueno">Nivel Bueno</div>
+                <div>46 – 50</div>
+                <div>40 – 43</div>
+
+                <div class="nivel excelente">Nivel Excelente</div>
+                <div>51 – 55</div>
+                <div>44 – 49</div>
+
+                <div class="nivel superior">Nivel Superior</div>
+                <div>&gt; 56</div>
+                <div>&gt; 50</div>
+            </div>
+        </section>
+
+
+        <!-- Resultados individuales  -->
+        <section class="card">
+            <h3>Análisis individual de alumnos</h3>
+
+            <table class="tabla-analisis">
+                <thead>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>Rockport</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAlumnos"></tbody>
+            </table>
+        </section>
+
+
+
+
         <!-- Gráficas -->
         <section class="graficas">
             <div class="grafica">
@@ -66,6 +120,11 @@
         </section>
     </main>
 
+
+         <a class="add-btn" href="/index.html">Realizar la prueba otra vez</a>
+
+
     <script src="app.js"></script>
 </body>
+
 </html>
