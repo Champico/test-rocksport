@@ -2,7 +2,7 @@ import { Client } from "pg";
 
 export const handler = async () => {
   const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.NETLIFY_DATABASE_URL,
     ssl: { rejectUnauthorized: false }
   });
 
