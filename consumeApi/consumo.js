@@ -9,13 +9,7 @@ async function cargarAlumnos() {
 }
 
 async function guardarResultados(id, edad, kg, tiempo, rockport) {
-    const data = {
-        id: id,
-        edad: edad,
-        kg: kg,
-        tiempo: tiempo,
-        rockport: rockport
-    };
+    const data = { id, edad, kg, tiempo, rockport };
 
     try {
         const res = await fetch('/.netlify/functions/actualizarAlumno', {
@@ -26,9 +20,11 @@ async function guardarResultados(id, edad, kg, tiempo, rockport) {
         const resultado = await res.json();
 
         if (!resultado.ok) {
-            alert(resultado.message || resultado.error);
+            console.log(resultado.message || resultado.error);
         }
     } catch (e) {
-        alert(e.message)
+        alert(e.message);
     }
 }
+
+
