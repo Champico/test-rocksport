@@ -1,7 +1,7 @@
 import { Client } from "pg";
 
 export const handler = async (event) => {
-  const { id, edad, kg, tiempo, rockport } = JSON.parse(event.body);
+  const { id, edad, kg, tiempo, rockport, sexo } = JSON.parse(event.body);
 
   const client = new Client({
     connectionString: process.env.NETLIFY_DATABASE_URL,
@@ -17,9 +17,10 @@ export const handler = async (event) => {
           kg = $2,
           tiempo = $3,
           rockport = $4
-      WHERE id = $5
+          sexo = $5
+      WHERE id = $6
       RETURNING id
-    `, [edad, kg, tiempo, rockport, id]);
+    `, [edad, kg, tiempo, rockport, sexo, id]);
 
     if (result.rowCount === 0) {
       return {

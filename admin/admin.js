@@ -91,7 +91,8 @@ document.querySelector(".calc-btn").addEventListener("click", async () => {
             registro.edad,
             registro.peso,
             tiempoDecimal,
-            vo2
+            vo2,
+            registro.sexo
         );
     }
 });

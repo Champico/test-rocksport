@@ -8,8 +8,8 @@ async function cargarAlumnos() {
     }
 }
 
-async function guardarResultados(id, edad, kg, tiempo, rockport) {
-    const data = { id, edad, kg, tiempo, rockport };
+async function guardarResultados(id, edad, kg, tiempo, rockport, sexo) {
+    const data = { id, edad, kg, tiempo, rockport, sexo };
 
     try {
         const res = await fetch('/.netlify/functions/actualizarAlumno', {
