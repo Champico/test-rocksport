@@ -155,4 +155,31 @@ main {
     background: var(--azul-uv);
     color: white;
     font-family: "OpenSans", sans-serif;
+    padding: 14px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+
+.lista-alumnos {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.lista-alumnos li {
+    padding: 0.6rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.lista-alumnos li:last-child {
+    border-bottom: none;
+}
+
+.lista-alumnos li span {
+    color: #e53935;
+    font-weight: bold;
 }

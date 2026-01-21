@@ -108,6 +108,36 @@ async function init() {
             }
         }
     });
+
+
+
+
+
+    const listaSinTest = document.getElementById('listaSinTest');
+
+    // Filtrar alumnos sin información de test
+    const alumnosSinTest = alumnos
+        .filter(a => a.rockport == null || a.tiempo == null)
+        .sort((a, b) => {
+            const nombreA = `${a.nombre} ${a.apellido_paterno} ${a.apellido_materno || ''}`.toLowerCase();
+            const nombreB = `${b.nombre} ${b.apellido_paterno} ${b.apellido_materno || ''}`.toLowerCase();
+            return nombreA.localeCompare(nombreB);
+        });
+
+    // Mostrar lista
+    if (alumnosSinTest.length === 0) {
+        listaSinTest.innerHTML = '<li>Todos los alumnos tienen información completa </li>';
+    } else {
+        alumnosSinTest.forEach(a => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+            ${a.nombre} ${a.apellido_paterno} ${a.apellido_materno || ''}
+            <span> (sin test)</span>
+        `;
+            listaSinTest.appendChild(li);
+        });
+    }
+
 }
 
 init();
