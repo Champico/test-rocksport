@@ -3,8 +3,13 @@
     src: url("/src/OpenSans-Regular.ttf") format("truetype");
 }
 
+:root {
+    --azul-uv: #18529D;
+    --verde-uv: #28AD56;
+    --gris: #f2f4f7;
+}
 
-*{
+* {
     font-family: "OpenSans", sans-serif;
 }
 
@@ -31,7 +36,7 @@ main {
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
@@ -58,7 +63,7 @@ main {
     background: white;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -80,7 +85,7 @@ main {
     border: 1px solid #ccc;
 }
 
-.tabla-grid > div {
+.tabla-grid>div {
     padding: 0.6rem;
     border: 1px solid #ccc;
     text-align: center;
@@ -96,11 +101,26 @@ main {
     color: white;
 }
 
-.bajo { background: #e53935; }
-.regular { background: #fbc02d; color: #000; }
-.bueno { background: #81c784; }
-.excelente { background: #43a047; }
-.superior { background: #1b5e20; }
+.bajo {
+    background: #e53935;
+}
+
+.regular {
+    background: #fbc02d;
+    color: #000;
+}
+
+.bueno {
+    background: #81c784;
+}
+
+.excelente {
+    background: #43a047;
+}
+
+.superior {
+    background: #1b5e20;
+}
 
 
 
@@ -124,4 +144,15 @@ main {
 .tabla-analisis th {
     background: #18529D;
     color: white;
+}
+
+
+.resultados-individuales {
+    margin-bottom: 19px;
+}
+
+.add-btn {
+    background: var(--azul-uv);
+    color: white;
+    font-family: "OpenSans", sans-serif;
 }
