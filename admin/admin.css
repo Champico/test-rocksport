@@ -127,4 +127,5 @@ input::placeholder {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+    display: block;
 }

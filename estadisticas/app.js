@@ -28,12 +28,9 @@ function contarEdades(alumnos) {
 
 async function init() {
     const alumnos = await cargarAlumnos();
-    console.log(alumnos)
 
     const hombres = filtrarPorSexo(alumnos, 'hombre');
     const mujeres = filtrarPorSexo(alumnos, 'mujer');
-
-        console.log(hombres)
 
     // Promedios Rockport
     document.getElementById('rockportTotal').textContent =
