@@ -70,7 +70,7 @@ function agregarCard() {
 
 
 
-document.querySelector(".calculate-btn").addEventListener("click", async () => {
+document.querySelector(".calc-btn").addEventListener("click", async () => {
     const datos = obtenerYValidarDatosDeCards();
     if (!datos) return;
 
