@@ -1,12 +1,3 @@
-async function cargarAlumnos() {
-    try {
-        const response = await fetch('/.netlify/functions/obtenerAlumnos');
-        return await response.json();
-    } catch (e) {
-        console.error(e);
-        return [];
-    }
-}
 
 function promedio(lista, campo) {
     if (lista.length === 0) return 0;
@@ -32,9 +23,12 @@ function contarEdades(alumnos) {
 
 async function init() {
     const alumnos = await cargarAlumnos();
+    console.log(alumnos)
 
     const hombres = filtrarPorSexo(alumnos, 'hombre');
     const mujeres = filtrarPorSexo(alumnos, 'mujer');
+
+        console.log(hombres)
 
     // Promedios Rockport
     document.getElementById('rockportTotal').textContent =
