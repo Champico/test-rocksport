@@ -16,7 +16,7 @@ export const handler = async (event) => {
       SET edad = $1,
           kg = $2,
           tiempo = $3,
-          rockport = $4
+          rockport = $4,
           sexo = $5
       WHERE id = $6
       RETURNING id
