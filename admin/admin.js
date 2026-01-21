@@ -17,7 +17,7 @@ function crearSelectAlumnos() {
     const select = document.createElement('select');
     select.innerHTML = `<option value="">Nombre alumno</option>`;
 
-
+console.log(alumnosGlobal)
     if (alumnosGlobal.length > 0) {
         alumnosGlobal.forEach(alumno => {
             const option = document.createElement('option');
