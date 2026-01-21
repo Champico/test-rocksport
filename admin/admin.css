@@ -103,3 +103,7 @@ input::placeholder {
     color: white;
     font-family: "OpenSans", sans-serif;
 }
+
+.row-alumno{
+    width: 80%;
+}
