@@ -98,7 +98,7 @@ function calcularVoMax(datos) {
     // Conversión de sexo a valor numérico
     // Hombre = 1 | Mujer = 0
     const sexoValor = datos.sexo === "male" ? 1 : 0;
-const pesoLb = datos.peso * 2.20462;
+    const pesoLb = datos.peso * 2.20462;
 
     // Fórmula del Test de Rockport
     const vo2max =
