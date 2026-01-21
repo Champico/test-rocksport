@@ -15,15 +15,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function crearSelectAlumnos() {
     const select = document.createElement('select');
-
     select.innerHTML = `<option value="">Nombre alumno</option>`;
 
-    alumnosGlobal.forEach(alumno => {
-        const option = document.createElement('option');
-        option.value = alumno.id;
-        option.textContent = `${alumno.nombre} ${alumno.apellido_paterno} ${alumno.apellido_materno}`;
-        select.appendChild(option);
-    });
+
+    if (alumnosGlobal.length > 0) {
+        alumnosGlobal.forEach(alumno => {
+            const option = document.createElement('option');
+            option.value = alumno.id;
+            option.textContent = `${alumno.nombre} ${alumno.apellido_paterno} ${alumno.apellido_materno}`;
+            select.appendChild(option);
+        });
+
+
+    }
 
     return select;
 }
