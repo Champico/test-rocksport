@@ -109,6 +109,22 @@ input::placeholder {
 }
 
 
-result-card {
+.result-card {
     font-family: "OpenSans", sans-serif;
+}
+
+
+.admin-btn {
+    margin-top: 40px;
+    padding: 14px;
+    background-color: #cccccc;
+    color: rgb(146, 146, 146);
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
