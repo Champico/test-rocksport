@@ -94,8 +94,6 @@ document.querySelector(".calc-btn").addEventListener("click", async () => {
             vo2
         );
     }
-
-    alert("Cálculo y guardado completado correctamente");
 });
 
 
