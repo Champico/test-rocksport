@@ -117,7 +117,10 @@ async function init() {
 
     // Filtrar alumnos sin información de test
     const alumnosSinTest = alumnos
-        .filter(a => a.rockport == null || a.tiempo == null)
+        .filter(a =>
+            Number(a.equipo) !== 6 &&
+            (a.rockport == null || a.tiempo == null)
+        )
         .sort((a, b) => {
             const nombreA = `${a.nombre} ${a.apellido_paterno} ${a.apellido_materno || ''}`.toLowerCase();
             const nombreB = `${b.nombre} ${b.apellido_paterno} ${b.apellido_materno || ''}`.toLowerCase();

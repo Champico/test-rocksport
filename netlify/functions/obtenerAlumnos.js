@@ -10,7 +10,7 @@ export const handler = async () => {
     await client.connect();
 
     const result = await client.query(`
-      SELECT id, nombre, apellido_paterno, apellido_materno, matricula, sexo, kg, edad, tiempo, rockport
+      SELECT id, nombre, apellido_paterno, apellido_materno, matricula, sexo, kg, edad, tiempo, rockport, equipo 
       FROM alumno
       ORDER BY nombre
     `);
