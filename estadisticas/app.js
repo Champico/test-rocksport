@@ -112,6 +112,23 @@ async function init() {
 
 
 
+    // Promedios de peso
+    document.getElementById('pesoHombres').textContent =
+        promedio(hombres, 'peso');
+
+    document.getElementById('pesoMujeres').textContent =
+        promedio(mujeres, 'peso');
+
+    // Promedios de frecuencia cardíaca
+    document.getElementById('fcHombres').textContent =
+        promedio(hombres, 'frecuenciaCardiaca');
+
+    document.getElementById('fcMujeres').textContent =
+        promedio(mujeres, 'frecuenciaCardiaca');
+
+
+
+
 
     const listaSinTest = document.getElementById('listaSinTest');
 
